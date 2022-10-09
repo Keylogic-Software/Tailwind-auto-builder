@@ -28,6 +28,7 @@ jobs:
         run: npx tailwindcss -i ./src/in.css -o ./src/style.css
       - name: Commit
         run: |
+          git add ./src/style.css
           git config --global user.name 'Givinghawk'
           git config --global user.email 'givinghawk@users.noreply.github.com'
           git commit -am "Tailwind build (AUTOMATED)"
