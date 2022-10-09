@@ -27,6 +27,7 @@ jobs:
         working-directory: ./
         run: npx tailwindcss -i ./src/in.css -o ./src/style.css
       - name: Commit
+        working-directory: ./
         run: |
           git add ./src/style.css
           git config --global user.name 'Givinghawk'
