@@ -19,6 +19,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - continue-on-error: true
       
       - name: Update
         run: sudo apt update
