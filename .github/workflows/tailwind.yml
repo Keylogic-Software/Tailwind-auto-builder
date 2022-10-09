@@ -29,7 +29,7 @@ jobs:
       - name: Commit
         working-directory: ./
         run: |
-          git show $COMMIT:$FILE 2> /
+          git show $COMMIT:$FILE 2> /git.log
           git add ./src/style.css
           git config --global user.name 'Givinghawk'
           git config --global user.email 'givinghawk@users.noreply.github.com'
