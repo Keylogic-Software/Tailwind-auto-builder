@@ -36,3 +36,9 @@ jobs:
       - name: Build tailwind app
         working-directory: ./
         run: npx tailwindcss -i ./src/in.css -o ./src/style.css
+      - name: Commit report
+        run: |
+          git config --global user.name 'Givinghawk'
+          git config --global user.email 'givinghawk@users.noreply.github.com'
+          git commit -am "Tailwind build (AUTOMATED)"
+          git push
