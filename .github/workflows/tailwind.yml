@@ -35,4 +35,4 @@ jobs:
         run: npm install -D tailwindcss
       - name: Build tailwind app
         working-directory: ./
-        run: npx tailwindcss -i ./in.css -o ./style.css
+        run: npx tailwindcss -i ./src/in.css -o ./src/style.css
