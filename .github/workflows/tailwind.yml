@@ -19,7 +19,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - continue-on-error: true
       
       - name: Update
         run: sudo apt update
@@ -33,6 +32,7 @@ jobs:
         working-directory: ./
         run: npx tailwindcss -i ./src/in.css -o ./src/style.css
       - name: Commit
+        continue-on-error: true
         working-directory: ./
         run: |
           git add ./src/style.css
