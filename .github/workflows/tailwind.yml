@@ -24,9 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      - name: CD to /
-        run: cd /
+      
       - name: Update
         run: sudo apt update
       - name: Install node
@@ -36,4 +34,5 @@ jobs:
       - name: Install tailwindcss
         run: npm install -D tailwindcss
       - name: Build tailwind app
-        run: npx tailwindcss -i /src/in.css -o /src/style.css
+        working-directory: /
+        run: npx tailwindcss -i ./src/in.css -o ./src/style.css
