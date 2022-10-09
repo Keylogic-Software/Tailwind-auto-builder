@@ -31,5 +31,7 @@ jobs:
           git add ./src/style.css
           git config --global user.name 'Givinghawk'
           git config --global user.email 'givinghawk@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git checkout "${GITHUB_REF:11}"
           git commit -am "Tailwind build (AUTOMATED)"
           git push
