@@ -10,13 +10,9 @@ on:
 
 jobs:
   build:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
     steps:
-      - continue-on-error: true
       - uses: actions/checkout@v3
       
       - name: Update
@@ -41,14 +37,3 @@ jobs:
           git checkout "${GITHUB_REF:11}"
           git commit -am "Tailwind build (AUTOMATED)"
           git push
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
-
